@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FileX } from '../file';
 
 @Component({
   selector: 'app-html',
@@ -7,11 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HtmlComponent implements OnInit {
 
-  @Input() markdownText!: string;
+  @Input() file!: FileX;
   constructor() { }
 
   ngOnInit(): void {
+    // this.markdownText = "## Test"
+    console.log(this.file.text)
   }
+
 
 
 }

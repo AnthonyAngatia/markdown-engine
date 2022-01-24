@@ -19,7 +19,7 @@
     Enter Markdown Text
   </label>
   <div>
-    <textarea  #textInput (change)="onTextChange(textInput)" type="text" formControlName="text" style="margin-top: 15px; width: 100%; height:250px"></textarea>
+    <textarea  #textInput (change)="onTextChange(textInput)" type="text" formControlName="text" style="margin-top: 15px; width: 100%; height:150px"></textarea>
   </div>
 
 
@@ -35,12 +35,12 @@
   <!-- <markdown ngPreserveWhitespaces>
     {{markdownTextForm.value.text}}
   </markdown> -->
-  <section  #txtAreaValue  style="margin-top: 15px; width: 100%; height:250px" >
+  <section  #txtAreaValue  style="margin-top: 15px; width: 100%; height:150px" >
     <!-- {{markdownTextForm.value.text}} -->
     <h1>This is a H1 title</h1>
   </section>
 
-<app-html></app-html>
+<app-html [file] = "file"></app-html>
 
 
 

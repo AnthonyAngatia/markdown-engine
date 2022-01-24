@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { FileX } from './file';
 
 
 @Component({
@@ -10,6 +11,13 @@ import { FormBuilder } from '@angular/forms';
 export class AppComponent {
   title = 'mark-down';
   markdownString:string = "# Testing"
+  file: FileX = {
+    id: 1,
+    title:"Tilte",
+    text:"Text initilization is important"
+  }
+
+
 
   markdownTextForm = this.formBuilder.group({
     text: '',
@@ -20,8 +28,14 @@ export class AppComponent {
   ) {}
 
   onSubmit(){
-    console.warn('Your order has been submitted', this.markdownTextForm.value);
-    this.markdownTextForm.reset();
+    console.warn('submitted', this.markdownTextForm.value);
+    this.file.text = this.markdownTextForm.value
+    this.file = {
+      id: 1,
+    title:"Tilte",
+    text:this.markdownTextForm.value.text
+    }
+    // this.markdownTextForm.reset();
   }
 
   onClear(){
@@ -29,7 +43,7 @@ export class AppComponent {
   }
 
   onTextChange(input:any){
-    console.log(input.value)
+    // console.log(input.value)
   }
 
 

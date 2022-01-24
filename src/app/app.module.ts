@@ -18,16 +18,11 @@ import { HtmlComponent } from './html/html.component';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    // MarkdownModule.forRoot(
-    //   {loader: HttpClient}
-    // )
+    MarkdownModule.forRoot(
+      {loader: HttpClient}
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
-export interface file{
-  id:number;
-  title:string;
-  text:string;
-}
