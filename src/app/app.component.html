@@ -26,21 +26,15 @@
 
 
       <button type="submit" title="Save" mat-raised-button
-          style="margin-right: 1em;">Save</button>
+          style="margin-right: 1em;">Render</button>
       <button type="button" title="Clear all input fields" (click)="onClear()" mat-raised-button color="warn"
           style="margin-right: 1em;">Clear</button>
   </form>
 
   <h4>HTML Preview</h4>
-  <!-- <markdown ngPreserveWhitespaces>
+  <markdown ngPreserveWhitespaces>
     {{markdownTextForm.value.text}}
-  </markdown> -->
-  <section  #txtAreaValue  style="margin-top: 15px; width: 100%; height:150px" >
-    <!-- {{markdownTextForm.value.text}} -->
-    <h1>This is a H1 title</h1>
-  </section>
-
-<app-html [file] = "file"></app-html>
+  </markdown>
 
 
 

@@ -20,7 +20,7 @@ export class AppComponent {
 
 
   markdownTextForm = this.formBuilder.group({
-    text: '',
+    text: localStorage.getItem("markdown"),
   });
 
   constructor(
@@ -29,21 +29,29 @@ export class AppComponent {
 
   onSubmit(){
     console.warn('submitted', this.markdownTextForm.value);
-    this.file.text = this.markdownTextForm.value
+    // this.file.text = this.markdownTextForm.value
     this.file = {
       id: 1,
     title:"Tilte",
     text:this.markdownTextForm.value.text
     }
+    localStorage.setItem("markdown", this.markdownTextForm.value.text)
     // this.markdownTextForm.reset();
+    this.reload()
+
   }
 
   onClear(){
     this.markdownTextForm.reset();
+    localStorage.removeItem("markdown")
+    this.reload()
   }
 
   onTextChange(input:any){
     // console.log(input.value)
+  }
+  reload(){
+    window.location.reload()
   }
 
 
